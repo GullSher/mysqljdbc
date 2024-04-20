@@ -10,6 +10,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+
+
+
 
 /**
  *
@@ -21,17 +30,25 @@ public class Mysqljdbc {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try {
-            // TODO code application logic here
+      /**
+        try 
+        {
+      
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite1","root","");
             System.out.println(con);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Mysqljdbc.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
+            System.out.println("Database connection established");
+        }
+        catch (ClassNotFoundException ex) 
+        {
             Logger.getLogger(Mysqljdbc.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        catch (SQLException ex) {
+            Logger.getLogger(Mysqljdbc.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        */
+// Launch JavaFX application
+        Application.launch(Main.class, args);
         
         
     }

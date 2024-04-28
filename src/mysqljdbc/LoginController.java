@@ -30,48 +30,35 @@ import javafx.stage.Stage;
 
 public class LoginController implements Initializable {
     
-    public TextField usernameField;
-    public PasswordField passwordField;
+    public TextField usernameField; //usernameField
+    public PasswordField passwordField;  //passwordField
     
     private Connection connection;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-/*        // Initialize database connection  */
+    //@Override
+    //public void initialize(URL url, ResourceBundle rb) {
         //connection = 
-
-        try 
-        {
-      
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite1","root","");
-            System.out.println(con);
-            System.out.println("Database connection established");
-        }
-        catch (ClassNotFoundException ex) 
-        {
-            Logger.getLogger(Mysqljdbc.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        catch (SQLException ex) {
-            Logger.getLogger(Mysqljdbc.class.getName()).log(Level.SEVERE, null, ex);
-        }
-                
-        
-        
-        
-        
-
-
+@Override
+public void initialize(URL url, ResourceBundle rb) {
+/*        // Initialize database connection  */
+try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite1", "root", "");
+        System.out.println("Database connection established");
+    } catch (ClassNotFoundException | SQLException ex) {
+        Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+}
+       
 // Initialize your database connection here
-    }    
-
+        
     public void login() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        String username=usernameField.getText();
+        String password =passwordField.getText();
         
         try {
             // Prepare SQL statement
-            String query = "SELECT * FROM users WHERE username=? AND password=?";
+            String query = "SELECT * FROM login WHERE username=? AND password=?";
             PreparedStatement statement = connection.prepareStatement(query);
             statement.setString(1, username);
             statement.setString(2, password);
@@ -88,7 +75,8 @@ public class LoginController implements Initializable {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            showAlert("Error", "An error occurred while trying to log in.");
+            showAlert("Error", "An error occurred while trying to log in." +  e.getMessage());
+
         }
     }
     

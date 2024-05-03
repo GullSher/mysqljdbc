@@ -1,5 +1,10 @@
 package mysqljdbc;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.sql.DriverManager;
+import javafx.application.Application;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,22 +15,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-import java.sql.DriverManager;
-
-import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-
-
-
-
 
 
 public class LoginController implements Initializable {
@@ -69,6 +62,10 @@ try {
             if (resultSet.next()) {
                 // Login successful
                 showAlert("Login Successful", "Welcome, " + username + "!");
+                show1();
+                openMainForm();
+                
+                
             } else {
                 // Login failed
                 showAlert("Login Failed", "Invalid username or password.");
@@ -87,4 +84,32 @@ try {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    
+    public void show1(){
+        System.out.println(" this is from show1 method.");
+    }
+    
+    private void openMainForm(){
+        try {
+        // Load the MainForm.fxml file
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainForm.fxml"));
+        Parent root = loader.load();
+
+        // Create a new scene with the loaded MainForm.fxml
+        Scene scene = new Scene(root);
+
+        // Get the current stage (from any UI element)
+        Stage stage = (Stage) usernameField.getScene().getWindow();
+
+        // Set the scene to the stage
+        stage.setScene(scene);
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+        showAlert("Error", "An error occurred while opening the main form." + e.getMessage());
+    }
+    }
+    
 }
+
+    

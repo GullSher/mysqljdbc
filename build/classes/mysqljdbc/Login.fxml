@@ -35,7 +35,7 @@
          <font>
             <Font size="25.0" />
          </font></Label>
-      <Button layoutX="263.0" layoutY="339.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="102.0" text="LOGIN" />
+      <Button fx:id="loginbtn" layoutX="263.0" layoutY="339.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="102.0" text="LOGIN" />
       <TextField fx:id="usernameField" layoutX="259.0" layoutY="207.0" prefHeight="50.0" prefWidth="200.0">
          <font>
             <Font size="22.0" />

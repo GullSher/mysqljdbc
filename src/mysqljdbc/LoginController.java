@@ -3,7 +3,6 @@ package mysqljdbc;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.sql.DriverManager;
-import javafx.application.Application;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -11,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
+import javafx.application.Application;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
@@ -36,8 +37,15 @@ public void initialize(URL url, ResourceBundle rb) {
 /*        // Initialize database connection  */
 try {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite1", "root", "");
-        System.out.println("Database connection established");
+       //tried to change to password for=root ,"", to username-gullsher and password=allah@199
+        //
+//connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite1", "root", "");
+//
+        
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite1", "gullsher", "allah@199");
+        String dbName = connection.getCatalog(); // Get the name of the connected database
+        System.out.println("Database connection established with database: " + dbName);
+//        System.out.println("Database connection established with database named "+);
     } catch (ClassNotFoundException | SQLException ex) {
         Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -61,10 +69,10 @@ try {
             
             if (resultSet.next()) {
                 // Login successful
-                showAlert("Login Successful", "Welcome, " + username + "!");
+//                showAlert("Login Successful", "Welcome, " + username + "!");
+                  showAlert("Login Successful", "Welcome, " + username + "!");
                 show1();
-                openMainForm();
-                
+                openMainForm(); // On succefull login Open Main Form from where i can use One of the Factories.
                 
             } else {
                 // Login failed
@@ -87,12 +95,18 @@ try {
     
     public void show1(){
         System.out.println(" this is from show1 method.");
+
+        
+         
+        
     }
     
+
     private void openMainForm(){
         try {
         // Load the MainForm.fxml file
         FXMLLoader loader = new FXMLLoader(getClass().getResource("MainForm.fxml"));
+
         Parent root = loader.load();
 
         // Create a new scene with the loaded MainForm.fxml
@@ -104,9 +118,10 @@ try {
         // Set the scene to the stage
         stage.setScene(scene);
         stage.show();
+        stage.setTitle("Main Form");
     } catch (IOException e) {
         e.printStackTrace();
-        showAlert("Error", "An error occurred while opening the main form." + e.getMessage());
+        showAlert("Error", "An error occurred while opening the Factory2 form." + e.getMessage());
     }
     }
     

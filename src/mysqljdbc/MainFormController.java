@@ -38,12 +38,16 @@ public class MainFormController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-                 
         
-    }    
+        // TODO
+           
+   }
+        
+        
+   //}    
     
     public void OpenFactory2(){
     // Your method implementation here
@@ -51,25 +55,26 @@ public class MainFormController implements Initializable {
     System.out.println("Code to Open Factory 2.");
     // Here  i want to close 
 
-        
- try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Factory2.fxml"));
-//            Parent root = loader.load();
-              Parent gullsher =loader.load();
 
-            Scene scene1 = new Scene(gullsher);
+    
+    
+    try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Factory2.fxml"));
+        Parent root = loader.load();
 
-            Stage stage1 = new Stage();
-            stage1.setScene(scene1);
-            stage1.show();
-            stage1.setTitle("Factory 2");
-            
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-           
-   }
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Factory 2");
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 }
+
+  
+    
+    }
+    
 
 

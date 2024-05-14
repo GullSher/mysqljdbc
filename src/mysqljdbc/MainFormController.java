@@ -35,6 +35,11 @@ import javafx.stage.Stage;
  */
 public class MainFormController implements Initializable {
 
+    public TextField usernameField1; //usernameField
+    public PasswordField passwordField1;  //passwordField
+    
+    private Connection connection1;
+
     /**
      * Initializes the controller class.
      */
@@ -43,6 +48,70 @@ public class MainFormController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
         // TODO
+        try {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+       //tried to change to password for=root ,"", to username-gullsher and password=allah@199
+        //
+//connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite1", "root", "");
+//
+        
+        connection1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite2", "gullsher", "allah@199");
+        String dbName1 = connection1.getCatalog(); // Get the name of the connected database
+        System.out.println("Database connection established with database: " + dbName1);
+        System.out.println("From LoginController.java Databased Connected  "+ dbName1);
+    } catch (ClassNotFoundException | SQLException ex) {
+        
+//Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+  Logger.getLogger(MainFormController.class.getName()).log(Level.SEVERE, null, ex);
+
+}
+}
+       
+// Initialize your database connection here
+        
+    public void login() {
+        String username1=usernameField1.getText();
+        String password1=passwordField1.getText();
+        
+        try {
+            // Prepare SQL statement
+            String query = "SELECT * FROM login2 WHERE username=? AND password=?";
+            PreparedStatement statement = connection1.prepareStatement(query);
+            statement.setString(1, username1);
+            statement.setString(2, password1);
+            
+            // Execute query
+            ResultSet resultSet = statement.executeQuery();
+            
+            if (resultSet.next()) {
+                // Login successful
+//                showAlert("Login Successful", "Welcome, " + username + "!");
+                  showAlert("Login Successful", "Welcome, " + username1 + "!");
+                //show1();
+                //openMainForm(); // On succefull login Open Main Form from where i can use One of the Factories.
+                OpenFactory2();
+
+            } else {
+                // Login failed
+                showAlert("Login Failed", "Invalid username or password.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            showAlert("Error", "An error occurred while trying to log in." +  e.getMessage());
+
+        }
+    }
+    
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+        
+        
+        
            
    }
         
@@ -52,8 +121,10 @@ public class MainFormController implements Initializable {
     public void OpenFactory2(){
     // Your method implementation here
 
-    System.out.println("Code to Open Factory 2.");
-    // Here  i want to close 
+    System.out.println("Code to Open Factory 2 From MainFormController.java .");
+    System.out.println("form MainformController here i shold be connected to database wgcsite3.");
+    System.out.println("Here  i want to close "+ "MainForm.fxml" );
+            
 
 
     

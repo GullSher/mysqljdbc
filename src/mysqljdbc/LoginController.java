@@ -45,7 +45,7 @@ try {
         connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/wgcsite1", "gullsher", "allah@199");
         String dbName = connection.getCatalog(); // Get the name of the connected database
         System.out.println("Database connection established with database: " + dbName);
-//        System.out.println("Database connection established with database named "+);
+        System.out.println("From LoginController.java Databased Connected  "+ dbName);
     } catch (ClassNotFoundException | SQLException ex) {
         Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
     }
@@ -94,9 +94,8 @@ try {
     }
     
     public void show1(){
-        System.out.println(" this is from show1 of LoginController.java method.");
-
-        
+        System.out.println(" this is from show-1 of LoginController.java method.");
+     
          
         
     }

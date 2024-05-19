@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mysqljdbc.MainFormController">
-    <stylesheets>
-        <URL value="@mainform.css" />
-    </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mysqljdbc.MainFormController">
    <children>
-      <Button fx:id="OpenFactory2btn" layoutX="58.0" layoutY="36.0" mnemonicParsing="false" onAction="#OpenFactory2" text="FGCFactory2" />
-      <Button layoutX="176.0" layoutY="36.0" mnemonicParsing="false" text="FGCFactory3" />
-      <Button layoutX="301.0" layoutY="36.0" mnemonicParsing="false" text="FGCFactory4" />
+      <Button layoutX="492.0" layoutY="36.0" mnemonicParsing="false" text="FGCFactory3" />
+      <Button layoutX="492.0" layoutY="100.0" mnemonicParsing="false" text="FGCFactory4" />
+      <AnchorPane layoutX="30.0" layoutY="23.0" prefHeight="215.0" prefWidth="330.0" style="-fx-background-color: orange;" />
+      <Label layoutX="40.0" layoutY="50.0" prefHeight="36.0" prefWidth="140.0" text="USER NAME">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameField1" layoutX="190.0" layoutY="38.0" prefHeight="50.0" prefWidth="150.0">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="passwordField1" layoutX="190.0" layoutY="105.0" prefHeight="50.0" prefWidth="150.0" />
+      <Label layoutX="51.0" layoutY="117.0" text="PASSWORD">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="135.0" layoutY="175.0" mnemonicParsing="false" onAction="#OpenFactory2" text="WGC  Factory 2" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>

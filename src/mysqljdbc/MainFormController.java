@@ -54,33 +54,7 @@ login2();
     //String username1 = usernameField1.getText();
       //  String password1 = passwordField1.getText();
         
-        try{
-//            String query = "SELECT * FROM login2 WHERE username1=? AND password1=?";
-//            PreparedStatement statement = connection.prepareStatement(query);
-//            statement.setString(1, username1);
-//            statement.setString(2, password1);
-//            
-//            ResultSet resultSet = statement.executeQuery();
-//               if (resultSet.next()) {
-//                 System.out.println("aaa");
-//                        );
-                          
-      
-
-
-FXMLLoader loader = new FXMLLoader(getClass().getResource("Factory2.fxml"));
-            Parent root = loader.load();
-
-            Scene scene = new Scene(root);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.setTitle("Factory 2");
-            stage.show();
-        }          
-               
-               catch (IOException e) {
-            e.printStackTrace();
-        }
+       
     }
 
     public void login2() {
@@ -107,6 +81,39 @@ FXMLLoader loader = new FXMLLoader(getClass().getResource("Factory2.fxml"));
                 + " is requireing to input user name and password if matched it go to mainform.\n\n" 
                 + " Well Done "                   
                 );
+       
+                
+                 try{
+//            String query = "SELECT * FROM login2 WHERE username1=? AND password1=?";
+//            PreparedStatement statement = connection.prepareStatement(query);
+//            statement.setString(1, username1);
+//            statement.setString(2, password1);
+//            
+//            ResultSet resultSet = statement.executeQuery();
+//               if (resultSet.next()) {
+//                 System.out.println("aaa");
+//                        );
+                          
+      
+
+
+FXMLLoader loader = new FXMLLoader(getClass().getResource("Factory2.fxml"));
+            Parent root = loader.load();
+
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Factory 2");
+            stage.show();
+        }          
+               
+               catch (IOException e) {
+            e.printStackTrace();
+        }
+                
+                
+                
+                
             } else {
                 showAlert("Login Failed", "Invalid username or password.");
             }

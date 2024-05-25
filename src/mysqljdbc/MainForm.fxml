@@ -17,12 +17,15 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameField1" layoutX="190.0" layoutY="38.0" prefHeight="50.0" prefWidth="150.0">
+      <TextField fx:id="usernameField1" layoutX="190.0" layoutY="38.0" prefHeight="50.0" prefWidth="150.0" promptText="user2">
          <font>
             <Font size="22.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordField1" layoutX="190.0" layoutY="105.0" prefHeight="50.0" prefWidth="150.0" />
+      <PasswordField fx:id="passwordField1" layoutX="190.0" layoutY="105.0" prefHeight="50.0" prefWidth="150.0" promptText="pass2">
+         <font>
+            <Font size="22.0" />
+         </font></PasswordField>
       <Label layoutX="51.0" layoutY="117.0" text="PASSWORD">
          <font>
             <Font size="25.0" />

@@ -53,14 +53,13 @@ public class LoginController implements Initializable {
             
             if (resultSet.next()) {
                 showAlert("Login Successful", "Welcome, " + username + " !" + 
-                        
-                        " in the start a login.fxml shows and requires \n\n to input the username and password,"
+                " in the start a login.fxml shows and requires \n\n to input the username and password,"
                         + 
                 "and at the backend it already has connected with mysql database name wgcsite1, \n\n"
                 + " => in which from table named =login  in which \n\n textfiled named =textfiled and passwordfiled named password \n"
                 + " is requireing to input user name and password if matched it go to mainform.\n\n" +
 "Well Done "
-                
+            
                 
                 );
                 

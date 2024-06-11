@@ -47,7 +47,7 @@ public class MainFormController implements Initializable {
                 + " => in which from table named =loginsite2 => textfiled named =textfiled and passwordfiled named password\n"
                 + " is requireing to input user name and password if matched it go to wgcsite2form.\n\n\n" +
                   " Well Done  .");
-        System.out.println("Code to Open Factory 2 From MainFormController.java. line # 1 \n\n");
+        System.out.println("Code to Open Factory 2 From MainFormController.java. line # 1 should be here. \n\n");
 login2();
         
         //System.out.println("Code to Open Factory 2 From MainFormController.java. line # 2");

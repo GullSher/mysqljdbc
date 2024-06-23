@@ -2,74 +2,106 @@
 
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+
 <AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1300.0" style="-fx-background-color: #154653;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mysqljdbc.Factory2Controller">
 
-        <stylesheets>
+    <stylesheets>
         <URL value="@factory2.css" />
     </stylesheets>
-
     <children>
-      <AnchorPane prefHeight="130.0" prefWidth="1290.0" style="-fx-border-color: #100688; -fx-border-width: 8; -fx-border-style: raised;" styleClass="factory2class" stylesheets="@factory2.css">
-         <children>
-            <Label layoutX="425.0" layoutY="30.0" text="Label 1:" textFill="#fbff0c">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <TextField layoutX="551.0" layoutY="20.0" promptText="Text Field 1">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-            <Label layoutX="425.0" layoutY="80.0" text="Label 2:" textFill="#fbff0c">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Label>
-            <TextField layoutX="550.0" layoutY="75.0" promptText="Text Field 2">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-         </children>
-      </AnchorPane>
-      <AnchorPane layoutY="140.0" prefHeight="653.0" prefWidth="1285.0" style="-fx-background-color: #774522;">
-         <children>
-            <TableView layoutX="2.0" layoutY="225.0" prefHeight="400.0" prefWidth="1280.0">
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                <TableColumn fx:id="nameColumn" text="Name" prefWidth="100.0" />
-                <TableColumn fx:id="emailColumn" text="Email" prefWidth="150.0" />
-                <TableColumn fx:id="ageColumn" text="Age" prefWidth="50.0" />
-                
-                
-                
-              </columns>
-              <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
-                <TableColumn fx:id="nameColumn" text="Name" prefWidth="100.0" />
-                <TableColumn fx:id="emailColumn" text="Email" prefWidth="150.0" />
-                <TableColumn fx:id="ageColumn" text="Age" prefWidth="50.0" />
-                
-                
-                
-              </columns>
-              
-              
-              
-              
-            </TableView>
-         </children>
-      </AnchorPane>
-   </children>
+        
+       <!-- AnchorPane wrapping MenuBar -->
+        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="30.0" prefWidth="1300.0">
+            <children>
+                <MenuBar prefWidth="1300.0">
+                    <menus>
+                        <Menu text="File">
+                            <items>
+                                <MenuItem text="New" onAction="#handleNewAction" />
+                                <MenuItem text="Open" onAction="#handleOpenAction" />
+                                <MenuItem text="Save" onAction="#handleSaveAction" />
+                                <MenuItem text="Exit" onAction="#handleExitAction" />
+                            </items>
+                        </Menu>
+                        <Menu text="Edit">
+                            <items>
+                                <MenuItem text="Cut" onAction="#handleCutAction" />
+                                <MenuItem text="Copy" onAction="#handleCopyAction" />
+                                <MenuItem text="Paste" onAction="#handlePasteAction" />
+                            </items>
+                        </Menu>
+                        <Menu text="Help">
+                            <items>
+                                <MenuItem text="About" onAction="#handleAboutAction" />
+                                <MenuItem text="Help" onAction="#handleHelpAction" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </AnchorPane>
+     
+       
+        <AnchorPane layoutY="97.0" prefHeight="130.0" prefWidth="1290.0" style="-fx-border-color: #100688; -fx-border-width: 8; -fx-border-style: raised; -fx-background-color: orange;" styleClass="factory2class" stylesheets="@factory2.css">
+            <children>
+                <Label layoutX="425.0" layoutY="30.0" text="Label 1:" textFill="#fbff0c">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField layoutX="551.0" layoutY="20.0" promptText="Text Field 1">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="425.0" layoutY="80.0" text="Label 2:" textFill="#fbff0c">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField layoutX="550.0" layoutY="75.0" promptText="Text Field 2">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </TextField>
+            </children>
+        </AnchorPane>
+      
+        <AnchorPane layoutX="3.0" layoutY="236.0" prefHeight="556.0" prefWidth="1290.0" style="-fx-background-color: #356522;">
+            <children>
+                <TableView layoutX="3.0" layoutY="37.0" prefHeight="512.0" prefWidth="1280.0">
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn fx:id="nameColumn" prefWidth="100.0" text="Name" />
+                        <TableColumn fx:id="emailColumn" prefWidth="150.0" text="Email" />
+                        <TableColumn fx:id="ageColumn" prefWidth="50.0" text="Age" />
+                            
+                    </columns>
+                    <columns>
+                        <TableColumn prefWidth="75.0" text="C1" />
+                        <TableColumn prefWidth="75.0" text="C2" />
+                        <TableColumn fx:id="nameColumn" prefWidth="100.0" text="Name" />
+                        <TableColumn fx:id="emailColumn" prefWidth="150.0" text="Email" />
+                        <TableColumn fx:id="ageColumn" prefWidth="50.0" text="Age" />
+                    </columns>
+                       
+                </TableView>
+            </children>
+        </AnchorPane>
+      
+          
+           
+    </children>
     
    
      

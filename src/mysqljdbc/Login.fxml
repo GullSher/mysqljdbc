@@ -17,37 +17,37 @@
          <children>
             <Arc fill="DODGERBLUE" length="275.0" radiusX="40.0" radiusY="40.0" smooth="false" startAngle="45.0" stroke="BLACK" strokeType="OUTSIDE" type="ROUND">
                <HBox.margin>
-                  <Insets left="8.0" top="8.0"/>
+                  <Insets left="8.0" top="8.0" />
                </HBox.margin>
             </Arc>
          </children>
       </HBox>
-      <AnchorPane layoutY="123.0" prefHeight="280.0" prefWidth="600.0" style="-fx-background-color: orange;"/>
+      <AnchorPane layoutY="123.0" prefHeight="280.0" prefWidth="600.0" style="-fx-background-color: orange;" />
       <Label alignment="CENTER" layoutX="244.0" layoutY="143.0" prefHeight="45.0" prefWidth="225.0" text="LOGIN" textAlignment="CENTER">
          <font>
-            <Font size="40.0"/>
+            <Font size="40.0" />
          </font>
       </Label>
       <Label layoutX="97.0" layoutY="220.0" text="USER NAME">
          <font>
-            <Font size="25.0"/>
+            <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="loginbtn" layoutX="263.0" layoutY="339.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="102.0" text="LOGIN"/>
-      <TextField fx:id="usernameField" layoutX="259.0" layoutY="207.0" prefHeight="50.0" prefWidth="200.0">
+      <Button fx:id="loginbtn" layoutX="263.0" layoutY="339.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="102.0" text="LOGIN" />
+      <TextField fx:id="usernameField" layoutX="259.0" layoutY="207.0" prefHeight="50.0" prefWidth="200.0" promptText="ahmad">
          <font>
-            <Font size="22.0"/>
+            <Font size="22.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="passwordField" layoutX="259.0" layoutY="268.0" prefHeight="50.0" prefWidth="200.0">
+      <PasswordField fx:id="passwordField" layoutX="259.0" layoutY="268.0" prefHeight="50.0" prefWidth="200.0" promptText="yes">
          <font>
-            <Font size="22.0"/>
+            <Font size="22.0" />
          </font>
       </PasswordField>
-      <ImageView fitHeight="120.0" fitWidth="134.0" layoutX="22.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true"/>
+      <ImageView fitHeight="120.0" fitWidth="134.0" layoutX="22.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="97.0" layoutY="285.0" text="PASSWORD">
          <font>
-            <Font size="29.0"/>
+            <Font size="29.0" />
          </font>
       </Label>
    </children>
